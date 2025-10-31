@@ -6,14 +6,14 @@ from connect import engine
 
 # to copy a table, use:
 with engine.connect() as conn:
-    conn.execute(text("CREATE SCHEMA IF NOT EXISTS hr_copy;"))
-    conn.execute(text("CREATE TABLE hr_copy.people AS TABLE public.people;"))
+    conn.execute(text("CREATE SCHEMA IF NOT EXISTS hr_backup;"))
+    conn.execute(text("CREATE TABLE hr_backup.people AS TABLE hr.people;"))
     conn.commit()
 
-# Moving tables between schema is also a DDL operation - moving via alter deletes original
+# Moving tables between schema is also a DDL operation - this will remove from original schema
 with engine.connect() as conn:
     conn.execute(text("CREATE SCHEMA IF NOT EXISTS hr_new;"))
-    conn.execute(text("ALTER TABLE public.people SET SCHEMA hr;"))
+    conn.execute(text("ALTER TABLE hr.people SET SCHEMA hr_new;"))
     conn.commit()
 
 # once this has been done - our ORM models need to be created/updated to reflect the new schema locations
