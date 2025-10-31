@@ -20,6 +20,7 @@ class Employee(Base):
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    email = Column(String)
     department_id = Column(Integer, ForeignKey('hr.department.id'))
 
     department = relationship("Department", back_populates="employees")
