@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, MetaData
 from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy import text
 from connect import engine
 
 # lets Base inherit the metadata attribute with a schema defined
@@ -22,5 +23,11 @@ class Employee(Base):
     department_id = Column(Integer, ForeignKey('hr.department.id'))
 
     department = relationship("Department", back_populates="employees")
+
+
+
+with engine.connect() as conn:
+    conn.execute(text("CREATE SCHEMA IF NOT EXISTS hr;"))
+    conn.commit()
 
 Base.metadata.create_all(engine)
