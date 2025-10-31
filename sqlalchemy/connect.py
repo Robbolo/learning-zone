@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from model import Base, Person
+from model import Base
 
 # set postgres container settings
 POSTGRES_USER = "rob"
@@ -14,7 +13,5 @@ engine = create_engine(
     f"postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
 )
 
+# Create all previously defined tables in the database
 Base.metadata.create_all(engine)
-
-Session = sessionmaker(bind=engine)
-session = Session()
