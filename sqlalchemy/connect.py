@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from model import Base
+from simple_model import Base
 
 # set postgres container settings
 POSTGRES_USER = "rob"

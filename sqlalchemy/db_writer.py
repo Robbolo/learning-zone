@@ -1,6 +1,6 @@
 from sqlalchemy.orm import sessionmaker
 from connect import engine
-from model import Person
+from simple_model import Person
 
 # setup session for connection
 Session = sessionmaker(bind=engine)
