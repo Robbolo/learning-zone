@@ -25,7 +25,8 @@ class Employee(Base):
     department = relationship("Department", back_populates="employees")
 
 
-
+# SA ORM is for table/column definitions and CRUD ops
+# infrastructure such as schema/index creation needs to be done via raw SQL in SA Core
 with engine.connect() as conn:
     conn.execute(text("CREATE SCHEMA IF NOT EXISTS hr;"))
     conn.commit()
