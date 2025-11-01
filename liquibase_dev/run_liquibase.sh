@@ -2,6 +2,6 @@
 docker run --rm \
   -v "$(pwd)":/liquibase-host \
   liquibase/liquibase \
-  --changeLogFile=/liquibase/master-changelog.xml \
-  --defaultsFile=liquibase.properties update \
+  --changeLogFile=/liquibase-host/master-changelog.xml \
+  --defaultsFile=liquibase-host.properties update 
   
