@@ -6,7 +6,7 @@
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.13.xsd">
 
     <!-- Include schema-specific changelogs -->
-    <include file="rob/structure/rob-changelog.xml"/>
-    <include file="sarah/structure/sarah-changelog.xml"/>
+    <include file="rob/rob-changelog.xml"/>
+    <include file="sarah/sarah-changelog.xml"/>
 
 </databaseChangeLog>
