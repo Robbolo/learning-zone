@@ -1,6 +1,6 @@
 #!/bin/bash
 docker run --rm \
-  -v "$(pwd)":/liquibase-host \
+  -v "D:/Coding/Repos/learning-zone/liquibase_dev:/liquibase-host" \
   liquibase/liquibase \
   --changeLogFile=/liquibase-host/master-changelog.xml \
   --defaultsFile=/liquibase-host/liquibase.properties update 
