@@ -6,8 +6,6 @@
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.13.xsd">
 
     <!-- Run SQL in the structure folder -->
-    <changeSet id="1" author="sarah">
-        <sqlFile path="sarah/structure/create_tables.sql"/>
-    </changeSet>
+   <sqlFile path="sarah/structure/create_tables.sql" splitStatements="true" stripComments="true"/>
 
 </databaseChangeLog>
