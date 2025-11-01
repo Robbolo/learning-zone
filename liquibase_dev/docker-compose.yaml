@@ -13,5 +13,21 @@ services:
     ports:
       - "5432:5432"
 
+  liquibase:
+    image: liquibase/liquibase
+    container_name: liquibase-runner
+    depends_on:
+      - postgres_liquibase
+    volumes:
+      - ./drivers:/drivers
+      - ./master-changelog.xml:/liquibase/master-changelog.xml
+      - ./liquibase.properties:/liquibase/liquibase.properties
+      - ./rob:/liquibase/rob
+      - ./sarah:/liquibase/sarah
+    command: >
+      --changeLogFile=/liquibase/master-changelog.xml
+      --defaultsFile=/liquibase/liquibase.properties
+      update
+
 volumes:
   pg_liqui_data:
