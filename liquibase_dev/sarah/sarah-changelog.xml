@@ -6,6 +6,6 @@
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.13.xsd">
 
     <!-- Run SQL in the structure folder -->
-   <sqlFile path="sarah/structure/create_tables.sql" splitStatements="true" stripComments="true"/>
+   <include file="sarah/structure/create_tables.sql"/>
 
 </databaseChangeLog>
