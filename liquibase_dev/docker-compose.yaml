@@ -20,8 +20,8 @@ services:
     volumes:
       - ./:/liquibase-host
     command: >
-      --changeLogFile=/liquibase-host/master-changelog.xml
-      --defaultsFile=/liquibase-host/liquibase.properties
+      --changeLogFile=master-changelog.xml
+      --defaultsFile=liquibase.properties
       update
 
 volumes:
