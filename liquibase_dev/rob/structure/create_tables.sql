@@ -15,3 +15,6 @@ CREATE TABLE IF NOT EXISTS rob.departments (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100)
 );
+
+--changeset rob:004
+ALTER TABLE rob.employees ADD COLUMN next_of_kin VARCHAR(100);
