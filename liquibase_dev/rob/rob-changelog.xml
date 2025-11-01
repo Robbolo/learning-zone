@@ -7,7 +7,7 @@
 
     <!-- Run SQL in the structure folder -->
     <changeSet id="1" author="rob">
-        <sqlFile path="rob/structure/create_tables.sql"/>
+        <sqlFile path="structure/create_tables.sql"/>
     </changeSet>
 
 </databaseChangeLog>
