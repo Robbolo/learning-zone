@@ -20,13 +20,13 @@ services:
       - postgres_liquibase
     volumes:
       - ./drivers:/drivers
-      - ./master-changelog.xml:/liquibase/master-changelog.xml
-      - ./liquibase.properties:/liquibase/liquibase.properties
-      - ./rob:/liquibase/rob
-      - ./sarah:/liquibase/sarah
+      - ./master-changelog.xml:/liquibase-host/master-changelog.xml
+      - ./liquibase.properties:/liquibase-host/liquibase.properties
+      - ./rob:/liquibase-host/rob
+      - ./sarah:/liquibase-host/sarah
     command: >
-      --changeLogFile=/liquibase/master-changelog.xml
-      --defaultsFile=/liquibase/liquibase.properties
+      --changeLogFile=/liquibase-host/master-changelog.xml
+      --defaultsFile=/liquibase-host/liquibase.properties
       update
 
 volumes:
