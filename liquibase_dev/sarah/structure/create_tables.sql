@@ -1,13 +1,16 @@
--- Create schema for Sarah
+--liquibase formatted sql
+
+--changeset sarah:001
 CREATE SCHEMA IF NOT EXISTS sarah;
 
--- Example table in Sarah's schema
+--changeset sarah:002
 CREATE TABLE IF NOT EXISTS sarah.projects (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
     deadline DATE
 );
 
+--changeset sarah:003
 CREATE TABLE IF NOT EXISTS sarah.tasks (
     id SERIAL PRIMARY KEY,
     project_id INT REFERENCES sarah.projects(id),
