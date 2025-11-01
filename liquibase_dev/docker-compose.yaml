@@ -18,12 +18,12 @@ services:
     container_name: liquibase-runner
     depends_on:
       - postgres_liquibase
-    working_dir: /liquibase
+    working_dir: /liquibase-host
     volumes:
-      - ./:/liquibase
+      - ./:/liquibase-host
     command: >
-      --changeLogFile=/liquibase/master-changelog.xml
-      --defaultsFile=/liquibase/liquibase.properties
+      --changeLogFile=/liquibase-host/master-changelog.xml
+      --defaultsFile=/liquibase-host/liquibase.properties
       update
 
 volumes:
