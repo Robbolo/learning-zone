@@ -1,29 +1,29 @@
 --liquibase formatted sql
 
 --changeset rob:001
-CREATE SCHEMA IF NOT EXISTS rob;
+CREATE SCHEMA IF NOT EXISTS bob;
 
 --changeset rob:002
-CREATE TABLE IF NOT EXISTS rob.employees (
+CREATE TABLE IF NOT EXISTS bob.employees (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
     department VARCHAR(100)
 );
 
 --changeset rob:003
-CREATE TABLE IF NOT EXISTS rob.departments (
+CREATE TABLE IF NOT EXISTS bob.departments (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100)
 );
 
 --changeset rob:004
-ALTER TABLE rob.employees ADD COLUMN IF NOT EXISTS next_of_kin VARCHAR(100);
+ALTER TABLE bob.employees ADD COLUMN IF NOT EXISTS next_of_kin VARCHAR(100);
 
 --changeset rob:005
-ALTER TABLE rob.departments ADD COLUMN IF NOT EXISTS director VARCHAR(100);
+ALTER TABLE bob.departments ADD COLUMN IF NOT EXISTS director VARCHAR(100);
 
 --changeset rob:006
-CREATE TABLE IF NOT EXISTS rob.projects (
+CREATE TABLE IF NOT EXISTS bob.projects (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
     start_date DATE,

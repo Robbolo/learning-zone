@@ -17,3 +17,19 @@ CREATE TABLE IF NOT EXISTS sarah.tasks (
     description VARCHAR(255),
     completed BOOLEAN DEFAULT FALSE
 );
+
+--changeset sarah:004
+CREATE TABLE IF NOT EXISTS sarah.fairies (
+    id SERIAL PRIMARY KEY,
+    wing_type INT,
+    fey_domain VARCHAR(255),
+    completed BOOLEAN DEFAULT FALSE
+);
+
+--changeset sarah:005
+CREATE TABLE IF NOT EXISTS sarah.cakes (
+    id SERIAL PRIMARY KEY,
+    filling INT,
+    ingrediants VARCHAR(255),
+    eaten BOOLEAN DEFAULT FALSE
+);
