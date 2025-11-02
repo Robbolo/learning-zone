@@ -29,3 +29,11 @@ CREATE TABLE IF NOT EXISTS bob.projects (
     start_date DATE,
     end_date DATE
 );
+
+--changeset rob:007
+CREATE TABLE IF NOT EXISTS bob.hobbies (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    start_date DATE,
+    end_date DATE
+);
