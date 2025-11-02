@@ -1,0 +1,28 @@
+services:
+  postgres_liquibase:
+    image: postgres:latest
+    container_name: postgres-liquibase
+    environment:
+      POSTGRES_USER: rob
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: my_databse
+    volumes:
+      - pg_liqui_data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+
+  liquibase:
+    image: liquibase/liquibase
+    container_name: liquibase-runner
+    depends_on:
+      - postgres_liquibase
+    working_dir: /liquibase-host
+    volumes:
+      - ./:/liquibase-host
+    command: >
+      --changeLogFile=master-changelog.xml
+      --defaultsFile=liquibase.properties
+      update
+
+volumes:
+  pg_liqui_data:
