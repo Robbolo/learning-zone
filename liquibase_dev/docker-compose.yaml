@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: my_databse
     volumes:
-      - pg_liqui_data:/var/lib/postgresql
+      - db_data:/var/lib/postgresql
     ports:
       - "5432:5432"
 
@@ -25,4 +25,4 @@ services:
       update
 
 volumes:
-  pg_liqui_data:
+  db_data:
